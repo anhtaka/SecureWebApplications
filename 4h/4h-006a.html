@@ -1,0 +1,14 @@
+<body>
+処理を行います <input type="button" value="実行" onclick="go()">
+<script>
+function go() {
+  // 様々な処理
+  var url = location.hash.slice(1);
+  if (url.match(/^https?:\/\//)) {
+    location.href = url;
+  } else {
+    alert('遷移先URLが不適切');
+  }
+}
+</script>
+</body>

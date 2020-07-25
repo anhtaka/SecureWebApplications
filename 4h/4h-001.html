@@ -1,0 +1,18 @@
+<body>
+<script>
+window.addEventListener("hashchange", chghash, false);
+window.addEventListener("load", chghash, false);
+
+function chghash() {
+  var hash = window.location.hash;
+  var color = document.getElementById("color");
+  color.innerHTML = decodeURIComponent(window.location.hash.slice(1));
+}
+</script>
+<a href="#赤">赤</a>
+<a href="#緑">緑</a>
+<a href="#青">青</a>
+<p id="color"></p>
+</body>
+
+

@@ -1,0 +1,15 @@
+<body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<p id="userid"></p>
+<p id="mail"></p>
+<script>
+  $.ajax({
+    url: 'http://api.example.net/4g/4g-041.php',
+    dataType: 'jsonp',
+    jsonpCallback: "getuser"
+  }).done(function(data) {
+    $('#userid').text('ユーザID:' + data.userid);
+    $('#mail').text('メールアドレス:' + data.mail);
+  })
+</script>
+</body>

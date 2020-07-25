@@ -1,0 +1,45 @@
+<html>
+<head><title>4-14　構造化データの読み込みにまつわる問題</title></head>
+<body>
+4-14　構造化データの読み込みにまつわる問題
+<ul>
+<li>4.14.1 eval にまつわる問題</li>
+<ol>
+<li><a href="4e-001.php">4e-001 :evalによるオブジェクト受け渡し(正常系)</a></li>
+<li><a href="4e-002.php?data=MDsgcGhwaW5mbygp">4e-001:evalによるオブジェクト受け渡し(攻撃)</a></li>
+</ol>
+<li>4.14.2 安全でないデシリアライゼーション</li>
+<ol>
+<li><a href="4e-010.php">4e-010 :好みの色を示すクッキーの設定(正常系)</a></li>
+<li><a href="4e-011.php">4e-011 :好みの色を表示(正常系)</a></li>
+<li><a href="http://trap.example.com/4e/4e-900.php">4e-900:攻撃用クッキーの生成（攻撃）</a></li>
+<li><a href="4e-010a.php">4e-010a:好みの色を示すクッキーの設定(JSON版)</a></li>
+<li><a href="4e-011a.php">4e-011a:好みの色を表示(JSON版)</a></li>
+</ol>
+<li>4.14.3 XML外部実体参照（XXE）</li>
+<ol>
+<li><a href="4e-020.html">4e-020 :XXE脆弱なXML読み込み(libxml 2.7.8)</a></li>
+<li><a href="/php70/4e/4e-020.html">4e-020 :XXE対策済みのXML読み込み(libxml 2.9.4)</a></li>
+<li><a href="4e-022.html">4e-022 :XXE脆弱なXML読み込みJava版(空のデータ)</a></li>
+<li><a href="4e-024.html">4e-024 :XXE脆弱なXML読み込みJava版(正常系データ)</a></li>
+<li><a href="http://trap.example.com/4e/4e-922.html">4e-922 :XXE脆弱なXML読み込みJava版(/etc/hostsの読み出し)</a></li>
+<li><a href="http://trap.example.com/4e/4e-923.html">4e-923 :XXE脆弱なXML読み込みJava版(内部ネットワークのアクセス)</a></li>
+<li><a href="4e-022a.html">4e-022a:XXE対策済みXML読み込みJava版(空のデータ)</a></li>
+<li><a href="4e-024a.html">4e-024a:XXE対策済みXML読み込みJava版(正常系データ)</a></li>
+<li><a href="http://trap.example.com/4e/4e-922a.html">4e-922a:XXE対策済みXML読み込みJava版(/etc/hostsの読み出し)</a></li>
+<li><a href="http://trap.example.com/4e/4e-923a.html">4e-923a:XXE対策済みXML読み込みJava版(内部ネットワークのアクセス)</a></li>
+<li><a href="C4e_023.java">C4e-023:XXE脆弱なJavaソース(C4e_023.java)</a></li>
+<li><a href="C4e_023a.java">C4e-023a:XXE対策済みJavaソース(C4e_023a.java)</a></li>
+</ol>
+以下は攻撃用データ。ダウンロードして利用下さい。
+<ol>
+<li><a href="xxe-00.xml" download="xxe-00.xml">xxe-00 :正常系XMLデータ</a></li>
+<li><a href="xxe-01.xml" download="xxe-01.xml">xxe-01 :XXE攻撃（サーバー内ファイルの読み出し）</a></li>
+<li><a href="xxe-02.xml" download="xxe-02.xml">xxe-02 :XXE攻撃（内部ネットワークのアクセス）</a></li>
+<li><a href="xxe-03.xml" download="xxe-03.xml">xxe-02 :XXE攻撃（内部ネットワークのアクセス+base64）</a></li>
+</ol>
+</ul>
+<a href="phpinfo.php">phpinfo</a><br>
+<a href="/">ホームに戻る</a>
+</body>
+</html>

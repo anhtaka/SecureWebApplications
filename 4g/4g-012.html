@@ -1,0 +1,12 @@
+<body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+$.ajax({
+  url: "4g-011.php?zip=" + location.hash.slice(1),
+  dataType: "json",
+}).done(function(data) {
+  $('#d1').text(data.message);
+});
+</script>
+<p id="d1"></p>
+<body>

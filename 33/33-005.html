@@ -1,0 +1,14 @@
+<body>
+<script>
+  var req = new XMLHttpRequest();
+  req.open('GET', 'http://api.example.net/33/33-006.php');
+  req.onreadystatechange = function() {
+      if (req.readyState == 4 && req.status == 200) {
+         var span = document.getElementById('counter');
+        span.textContent = req.responseText;
+      }
+  };
+  req.send(null);
+</script>
+呼び出しカウンター:<span id="counter"></span>
+</body>

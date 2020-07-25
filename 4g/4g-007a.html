@@ -1,0 +1,13 @@
+<body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+$.ajax({
+  url: "http://api.example.net/4g/4g-006a.php?zip=" + location.hash.slice(1),
+  dataType: "jsonp",
+  jsonpCallback: "callback_zip"
+}).done(function(data) {
+  $('#message').text(data.message);
+});
+</script>
+<p id="message"></p>
+<body>

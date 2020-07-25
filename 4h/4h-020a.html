@@ -1,0 +1,11 @@
+<body>
+処理を行います <input type="button" value="実行" onclick="go()">
+<script>
+function go() {
+  // 様々な処理
+　var urls = {next: "4h-021.html", back: "../"};
+  var url = urls[location.hash.slice(1)] || "./notfound.html";
+  location.href = url;
+}
+</script>
+</body>

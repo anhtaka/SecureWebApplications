@@ -1,0 +1,20 @@
+<body>
+<p id="time"></p>
+<script>
+function disptime(json) {
+  var obj = JSON.parse(json);
+  var txt = document.createTextNode("時刻は" + obj.time + "です");
+  var p = document.getElementById("time");
+  p.appendChild(txt);
+}
+
+  var req = new XMLHttpRequest();
+  req.open("GET", "4g-001.php");
+  req.onreadystatechange = function() {
+    if (req.readyState == 4 && req.status == 200) {
+      disptime(req.responseText);
+    }
+  };
+  req.send(null);
+</script>
+<body>

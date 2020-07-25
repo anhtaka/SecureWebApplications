@@ -1,0 +1,17 @@
+<body>
+子フレーム
+<script>
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event) {
+  var d2 = document.getElementById("d2");
+  d2.innerHTML = "受信確認: " + event.data;
+}
+try {
+  window.parent.postMessage("secret data", "http://example.jp");
+} catch (e) {
+  alert(e);
+}
+</script>
+<div id="d2"></div>
+</body>

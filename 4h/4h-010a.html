@@ -1,0 +1,14 @@
+<body>
+親フレーム<br>
+<script>
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event) {
+  var d1 = document.getElementById("d1");
+  d1.innerHTML = "メッセージを受け取りました: " + event.data;
+  event.source.postMessage("メッセージを受け取りました", event.origin);
+}
+</script>
+<iframe src="http://api.example.net/4h/4h-011a.html" width=350 height=100></iframe><br>
+<div id="d1"></div>
+</body>

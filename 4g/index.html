@@ -1,0 +1,64 @@
+<html>
+<head><title>4.16 Web APIにまつわる問題</title></head>
+<body>
+4.16 Web APIにまつわる問題
+<ul>
+<li>基礎</li>
+<ol>
+<li><a href="4g-002.html">4g-002 :JSONによる時計</a></li>
+<li><a href="4g-004.html">4g-004 :JSONPによる時計</a></li>
+<li><a href="4g-005.html">4g-005 :JSONPによる時計(jQuery)</a></li>
+</ol>
+<li>JSONエスケープの問題</li>
+<ol>
+<li><a href="4g-007.html#1">4g-007 :JSONエスケープの不備(正常系)</a></li>
+<li><a href="4g-007.html#1&quot;%2balert(document.domain)%2b&quot;">4g-007 :JSONエスケープの不備(XSS攻撃)</a></li>
+<li><a href="4g-007a.html#1&quot;%2balert(document.domain)%2b&quot;">4g-007a:JSONエスケープの対策版(XSS攻撃)</a></li>
+</ol>
+<li>JSON直接閲覧によるXSS</li>
+<ol>
+<li><a href="4g-011.php?zip=1">4g-011 :JSON直接閲覧</a></li>
+<li><a href="4g-011.php?zip=&lt;img+src=1+onerror=alert(document.domain)&gt;">4g-011 :JSON直接閲覧(XSS攻撃)</a></li>
+<li><a href="4g-011a.php/a.html?zip=&lt;img+src=1+onerror=alert(document.domain)&gt;">4g-011a:JSON直接閲覧(Content-Type設定版)(IE9以前ならXSS可能)</a></li>
+<li><a href="4g-011b.php/a.html?zip=&lt;img+src=1+onerror=alert(document.domain)&gt;">4g-011b:JSON直接閲覧(X-Content-Type-Options: nosniff設定版)(IE7以前ならXSS可能)</a></li>
+<li><a href="4g-011c.php/a.html?zip=&lt;img+src=1+onerror=alert(document.domain)&gt;">4g-011c:JSON直接閲覧(タグ等もエスケープ)(IE7でもJavaScriptは実行されない)</a></li>
+<li><a href="4g-011d.php/a.html?zip=&lt;img+src=1+onerror=alert(document.domain)&gt;">4g-011d:JSON直接閲覧(X-Requested-Withヘッダの確認; 403 Forbiddenとなる)</a></li>
+<li><a href="4g-012.html#1">4g-012 :4g-011d.phpの呼び出し(jQuery利用)</a></li>
+</ol>
+<li>JSONPコールバック関数名によるXSS</li>
+<ol>
+<li><a href="4g-016.html">4g-016 :JSONPコールバック関数名によるXSS(HTMLからの正常系利用)</a></li>
+<li><a href="http://api.example.net/4g/4g-015.php?callback=display_time">4g-015 :JSONPコールバック関数名によるXSS(攻撃でない直接閲覧)</a></li>
+<li><a href="http://api.example.net/4g/4g-015.php?callback=%3Cscript%3Ealert(document.domain)%3C/script%3E">4g-015 :JSONPコールバック関数名によるXSS(XSS攻撃)</a></li>
+<li><a href="http://api.example.net/4g/4g-015a.php?callback=%3Cscript%3Ealert(document.domain)%3C/script%3E">4g-015a:JSONPコールバック関数名によるXSS(対策版)</a></li>
+</ol>
+<li>Web APIのCSRF脆弱性</li>
+<ol>
+<li><a href="4g-022.html">4g-022 :CSRF脆弱なメールアドレス変更</a></li>
+<li><a href="http://trap.example.com/4g/4g-921.html">4g-921 :CSRF攻撃</a></li>
+<li><a href="4g-022a.html">4g-022a:CSRF対策済みのメールアドレス変更</a></li>
+<li><a href="http://trap.example.com/4g/4g-921a.html">4g-921a:CSRF攻撃</a></li>
+<li><a href="4g-022b.html">4g-022b:CSRF対策済みのメールアドレス変更</a></li>
+<li><a href="http://trap.example.com/4g/4g-921b.html">4g-921b:CSRF攻撃</a></li>
+<li><a href="4g-022c.html">4g-022c:CSRF対策済みのメールアドレス変更</a></li>
+<li><a href="http://trap.example.com/4g/4g-921c.html">4g-921c:CSRF攻撃</a></li>
+<li><a href="http://trap.example.com/4g/4g-921d.html">4g-921d:CSRF攻撃(2)</a></li>
+</ol>
+<li>JSONハイジャック</li>
+<ol>
+<li><a href="4g-030.json">4g-030 :JSONのサンプル</a></li>
+<li><a href="http://trap.example.com/4g/4g-930.html">4g-930 :JSONをscript要素で読み出そうとする</a></li>
+<li><a href="http://trap.example.com/4g/4g-931.html">4g-931 :JSONハイジャック(古いFirefoxで再現)</a></li>
+</ol>
+<li>JSONPの不適切な利用</li>
+<ol>
+<li><a href="http://api.example.net/4g/4g-040.php">4g-040 :ログイン(api.example.net)</a></li>
+<li><a href="4g-042.html">4g-042 :個人情報の表示(正常系)</a></li>
+<li><a href="http://trap.example.com/4g/4g-042.html">4g-042 :罠サイトから個人情報の表示</a></li>
+</ol>
+</ul>
+<a href="phpinfo.php">phpinfo</a><br>
+<a href="/">ホームに戻る</a>
+</body>
+</html>
+

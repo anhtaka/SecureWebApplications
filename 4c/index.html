@@ -1,0 +1,50 @@
+<html>
+<head><title>4.12 ファイルアップロードにまつわる問題</title></head>
+<body>
+4.12 ファイルアップロードにまつわる問題
+<ul>
+<li>4.12.2 アップロードファイルによるサーバー側スクリプト実行</li>
+<ol>
+<li><a href="4c-001.php">4c-001:ファイルアップロード（脆弱版）</a></li>
+<li><a href="4c-001a.php">4c-001a:ファイルアップロード（ダウンロードスクリプト経由）</a></li>
+</ol>
+
+以下は攻撃用データ。ダウンロードして利用下さい。
+<ol>
+<li><a href="sample.png" download="sample.png">sample :正常なPNG画像(sample.png)</a></li>
+<li><a href="4c-900.txt" download="4c-900.php">4c-900 :攻撃用PHP(4c-900.php)</a></li>
+</ol>
+
+
+
+<li>4.12.3 ファイルダウンロードによるクロスサイト・スクリプティング</li>
+<ol>
+<li><a href="4c-011.php">4c-011:ファイルアップロード（PDF）</a></li>
+<li><a href="4c-011a.php">4c-011a:ファイルアップロード（PDF対策版）</a></li>
+<li><a href="4c-011b.php">4c-011b:ファイルアップロード（PDF対策版、Content-Disposition）</a></li>
+</ol>
+
+以下は攻撃用データ。ダウンロードして利用下さい。
+<ol>
+<li><a href="sample.pdf" download="sample.pdf">sample :正常なPDFファイル(sample.pdf)</a></li>
+<li><a href="4c-902.pdf" download="4c-902.pdf">4c-902 :PDFに偽装した攻撃用HTML(4c-902.pdf)</a></li>
+</ol>
+
+
+<li>4.12.4 PDFのFormCalcによるコンテンツハイジャック(IEでアクセス)</li>
+<ol>
+<li><a href="/31/31-020.php">31-020 :ログイン</a></li>
+<li><a href="http://trap.example.com/4c/ContentHijackingLoader.html?objfile=http://example.jp/4c/4c-013a.php%3ffile%3dContentHijacking.pdf&objtype=pdf&target=http://example.jp/31/31-022.php&postdata=&logmode=all&regex=">コンテンツハイジャック(PDF)</a></li>
+<li><a href="4c-011d.php">4c-011d:ファイルアップロード（FormCalc対策版）</a></li>
+<li><a href="http://trap.example.com/4c/ContentHijackingLoader.html?objfile=http://api.example.net/4c/4c-013d.php%3ffile%3dContentHijacking.pdf&objtype=pdf&target=http://example.jp/31/31-022.php&postdata=&logmode=all&regex=">コンテンツハイジャック(PDF; 対策版)</a></li>
+</ol>
+以下はコンテンツハイジャック攻撃用データ。
+<ol>
+<li><a href="ContentHijacking.pdf" download="ContentHijacking.pdf">ContentHijacking.pdf</a></li>
+</ol>
+</ul>
+<a href="phpinfo.php">phpinfo</a><br>
+<a href="/">ホームに戻る</a>
+</body>
+</html>
+

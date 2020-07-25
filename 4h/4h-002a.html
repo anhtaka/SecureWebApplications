@@ -1,0 +1,14 @@
+<body>
+アクセス解析サンプル
+<script>
+function escape_html(s){
+  return s.replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt; ")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+var url = decodeURIComponent(location.href);
+document.write('<img src="http://api.example.net/4h/4h-003.php?' + escape_html(url) + '">');
+</script>
+</body>

@@ -1,0 +1,15 @@
+<body>
+<script>
+  var req = new XMLHttpRequest();
+  req.open('POST', 'http://api.example.net/33/33-004.php');
+  req.setRequestHeader('content-type', 'application/json');
+  data = '{"zipcode" : "100-0100"}';
+  req.onreadystatechange = function() {
+      if (req.readyState == 4 && req.status == 200) {
+        alert(req.responseText);
+      }
+  };
+  req.send(data);
+</script>
+送信しました
+</body>

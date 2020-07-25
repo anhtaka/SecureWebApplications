@@ -1,0 +1,30 @@
+<body>
+<script>
+window.addEventListener("hashchange", cxhash, false);
+window.addEventListener("load", cxhash, false);
+
+var menus = {menu_a: 'menu_a.html',
+             menu_b: 'menu_b.html',
+             menu_c: 'menu_c.html',
+             menu_d: 'menu_d.html'};
+
+function cxhash() {
+  var req = new XMLHttpRequest();
+  var url = menus[location.hash.slice(1)];
+  if (! url) url = 'menu_a.html';
+  req.open("GET", url);
+  req.onreadystatechange = function() {
+    if (req.readyState == 4 && req.status == 200) {
+      var div = document.getElementById("content");
+      div.innerHTML = req.responseText;
+    }
+  };
+  req.send(null);
+}
+</script>
+<a href="#menu_a">A</a>
+<a href="#menu_b">B</a>
+<a href="#menu_c">C</a>
+<a href="#menu_d">D</a>
+<div id="content"></div>
+</body>

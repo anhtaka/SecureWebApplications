@@ -1,0 +1,51 @@
+<html>
+<head><title>4.17 JavaScriptの問題</title></head>
+<body>
+4.17 JavaScriptの問題
+<ul>
+<li>4.17.1 DOM Based XSS</li>
+<ol>
+<li><a href="4h-001.html#赤">4h-001 :innerHTMLによるDOM Based XSS(正常系)</a></li>
+<li><a href="4h-001.html#<img src=/ onerror=alert(1)>">4h-001 :innerHTMLによるDOM Based XSS(攻撃)</a></li>
+<li><a href="4h-001a.html#<img src=/ onerror=alert(1)>">4h-001a:4h-001 の対策版(攻撃)</a></li>
+<li><a href="4h-002.html">4h-002 :アクセス解析(document.write; 正常系)</a></li>
+<li><a href="4h-002.html#%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E">4h-002 :アクセス解析(document.write; XSS攻撃)</a></li>
+<li><a href="4h-002a.html#%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E">4h-002a:アクセス解析対策版(document.write; XSS攻撃)</a></li>
+<li><a href="4h-004.html">4h-004 :XMLHttpRequestのURL未検証(正常系)</a></li>
+<li><a href="4h-004.html#//trap.example.com/4h/4h-900.php?">4h-004 :XMLHttpRequestのURL未検証(XSS攻撃)</a></li>
+<li><a href="4h-004a.html">4h-004a:XMLHttpRequestのURL検証版(正常系)</a></li>
+<li><a href="4h-004a.html#//trap.example.com/4h/4h-900.php?">4h-004a:XMLHttpRequestのURL検証版(XSS攻撃)</a></li>
+<li><a href="4h-005.html?color=2">4h-005 :jQueryのセレクタの動的生成によるXSS(正常系)</a></li>
+<li><a href="4h-005.html?color=2&quot;]&lt;img+src=/+onerror=alert(1)&gt;">4h-005 :jQueryのセレクタの動的生成によるXSS(攻撃)</a></li>
+<li><a href="4h-005a.html?color=2&quot;]&lt;img+src=/+onerror=alert(1)&gt;">4h-005a:jQueryのセレクタの動的生成によるXSS findメソッドによる対策(攻撃)</a></li>
+<li><a href="4h-005b.html?color=2&quot;]&lt;img+src=/+onerror=alert(1)&gt;">4h-005b:jQueryのセレクタの動的生成によるXSS パラメータの整数化(攻撃)</a></li>
+<li><a href="4h-005c.html?color=2&quot;]&lt;img+src=/+onerror=alert(1)&gt;">4h-005c:jQueryのセレクタの動的生成によるXSS(対策済みjQuery)(攻撃)</a></li>
+<li><a href="4h-006.html#4h-007.html">4h-006 :javascriptスキームによるXSS（正常系）</a></li>
+<li><a href="4h-006.html#javascript:alert(document.domain)">4h-006 :javascriptスキームによるXSS（攻撃）</a></li>
+<li><a href="4h-006a.html#http://example.jp/4h/4h-007.html">4h-006a:javascriptスキームによるXSS対策版（正常系）</a></li>
+<li><a href="4h-006a.html#javascript:alert(document.domain)">4h-006a:javascriptスキームによるXSS対策版（攻撃）</a></li>
+<li><a href="4h-008.html#3">4h-008 :setTimeoutによるXSS（正常系; 3秒待つ）</a></li>
+<li><a href="4h-008.html#');alert(document.domain)//">4h-008 :setTimeoutによるXSS（攻撃）</a></li>
+<li><a href="4h-008a.html#');alert(document.domain)//">4h-008 :setTimeoutによるXSS（対策版への攻撃）</a></li>
+</ol>
+<li>4.17.3 postMessage呼び出しの不備</li>
+<ol>
+<li><a href="4h-010.html">4h-010 :postMessageの例</a></li>
+<li><a href="http://trap.example.com/4h/4h-010.html">4h-010 :postMessageの脆弱性の悪用</a></li>
+<li><a href="http://trap.example.com/4h/4h-010a.html">4h-010a:postMessageの悪用（対策版）</a></li>
+<li><a href="http://trap.example.com/4h/4h-910.html">4h-910 :メッセージ送信元の未確認（攻撃）</a></li>
+<li><a href="http://trap.example.com/4h/4h-910c.html">4h-910c:メッセージ送信元の確認版（攻撃）</a></li>
+</ol>
+<li>4.17.4 オープンリダイレクト</li>
+<ol>
+<li><a href="4h-020.html#http://example.jp/4h/4h-021.html">4h-020 :オープンリダイレクト(正常系)</a></li>
+<li><a href="4h-020.html#http://trap.example.com/4h/4h-901.html">4h-020 :オープンリダイレクト(攻撃)</a></li>
+<li><a href="4h-020a.html#next">4h-020a:オープンリダイレクト対策版(正常系)</a></li>
+<li><a href="4h-020a.html#//trap.example.com/4h/4h-901.html">4h-020a:オープンリダイレクト対策版(攻撃)</a></li>
+</ol>
+</ul>
+<a href="phpinfo.php">phpinfo</a><br>
+<a href="/">ホームに戻る</a>
+</body>
+</html>
+

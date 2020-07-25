@@ -1,0 +1,37 @@
+<body onload="mailcheck()">
+<script>
+function mailcheck() {
+  var req = new XMLHttpRequest();
+  req.open("GET", "4g-020.php");
+  req.onreadystatechange = function() {
+    if (req.readyState == 4 && req.status == 200) {
+      var obj = JSON.parse(req.responseText);
+      var p_mail = document.getElementById("p_mail");
+      p_mail.textContent = "メールアドレス:" + obj.mail;
+    }
+  };
+  req.send(null);
+}
+
+function chgmail() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "4g-021.php");
+  req.withCredentials = true;
+  req.onreadystatechange = function() {
+    if (req.readyState == 4 && req.status == 200) {
+      var obj = JSON.parse(req.responseText);
+      var result = document.getElementById("result");
+      result.textContent = "アドレス変更: " + obj.result;
+      mailcheck();
+    }
+  };
+  var mail = document.getElementById('mail').value;
+  json = JSON.stringify({"mail": mail});
+  req.send(json);
+}
+</script>
+<input id="mail">
+<input type="button" value="メールアドレス変更" onclick="chgmail()">
+<p id="p_mail"></p>
+<p id="result"></p>
+<body>

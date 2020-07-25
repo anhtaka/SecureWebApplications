@@ -1,0 +1,15 @@
+<body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+function display_time(obj) {
+  $("#time").text("時刻は" + obj.time + "です");
+}
+
+$.ajax({
+  url: "http://api.example.net/4g/4g-003.php",
+  dataType: "jsonp",
+  jsonpCallback: "display_time"
+});
+</script>
+<p id="time"></p>
+<body>

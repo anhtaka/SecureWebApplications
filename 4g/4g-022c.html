@@ -1,0 +1,31 @@
+<body onload="mailcheck()">
+<script src="../js/jquery-3.2.1.min.js"></script>
+<input id="mail">
+<input id="chgmail" type="button" value="メールアドレス変更">
+<p id="p_mail"></p>
+<p id="result"></p>
+<script>
+function mailcheck() {
+  $.ajax({
+    url: '4g-020.php',
+    type: 'GET',
+    dataType: 'json'
+  }).done(function(data) {
+    $('#p_mail').text(data.mail);
+  })
+}
+
+$('#chgmail').on('click', function() {
+  $.ajax({
+    url: '4g-021c.php',
+    type: 'POST',
+    dataType: 'json',
+    contentType: 'application/json',
+    data: JSON.stringify({"mail": $('#mail').val()})
+  }).done(function(data) {
+    mailcheck();
+    $('#result').text(data.result);
+  })
+});
+</script>
+<body>
